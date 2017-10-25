@@ -32,7 +32,18 @@ function setClickEvent() {
   }
 }
 
+function removeClickEvent() {
+  for (let i = 0; i < pieces.length; i++) {
+
+    // any clicks will check if there is a winner
+    pieces[i].onclick = function(event) {
+      return false
+    }
+  }
+}
+
 function winnerFound(winner) {
+  removeClickEvent();
   let x = document.querySelectorAll(".board-piece")
 
   let turn_text = document.querySelector(".turn-text")
@@ -40,6 +51,8 @@ function winnerFound(winner) {
 
   let reset_button = document.querySelector(".reset-button")
   reset_button.style.display = 'block';
+
+
 
   reset_button.onclick = function(event) {
     this.style.display = 'none';
@@ -51,6 +64,7 @@ function winnerFound(winner) {
     for (let i = 0; i < x.length; i++) {
       x[i].innerHTML = ""
     }
+    setClickEvent();
   }
 }
 
