@@ -28,7 +28,21 @@ td {
   border: 1px solid grey;
 }
 
-button {
+.reset-button, .replay-button {
   display: none;
   margin-bottom: 20px;
+}
+
+.turn-text {
+  display: none;
+}
+
+.reset-button {
+  font-size: 1em;
+  margin: 0 auto;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 3px;
+  border: 0;
+  background-color: #eeeeee; 
 }
